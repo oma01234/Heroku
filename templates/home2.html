@@ -1,0 +1,55 @@
+{% if user.is_authenticated %}
+	<body>
+		<header>
+			<nav class="navbar navbar-inverse">
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+						<div class="nav navbar-nav navbar-left">
+							<h1>
+								<a href="{% url 'post_new' %}">New Blog Post</a>
+							</h1>
+						</div>
+						<div class="nav navbar-nav navbar-right">
+							<h4>
+								<a href="{% url 'change-password2' %}">Reset Password</a>
+							</h4>
+							<br>
+							<h4>
+								<a href="{% url 'logout' %}">Logout</a>
+							</h4>
+						</div>
+				</div>
+			</nav>
+		</header>
+	</body>
+	
+	{% block content%}
+		<body>
+			<header>
+				<nav class="navbar navbar-inverse">
+					<div class="collapse navbar-collapse" id="ownNavbar">
+						<div class="nav navbar-nav navbar-left">
+							{% for post in object_list %}
+								<div class="post-entry">
+									<h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+									<p> {{ post.body }} </p>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</nav>
+			</header>
+		</body>
+	{% endblock %}
+
+{% else %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<div class="collapse navbar-collapse" id="Navbar">
+	  <ul class="nav navbar-nav navbar-right">
+	    <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	  </ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+	    </ul>
+	</div>
+{% endif %}

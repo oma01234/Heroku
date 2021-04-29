@@ -1,0 +1,20 @@
+{% extends 'home2.html' %}
+{% if user.is_authenticated %}
+	{% block content %}
+			<div>
+				<h2>Delete Post</h2>
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+				<form action="" method="post">
+					<p>Are you sure you want to delete? '{{ post.title }}'</p>
+					{% csrf_token %}
+					{{ form.as_p }}
+					<input type="submit" value="Delete">
+				</form>
+			</div>
+	{% endblock %}
+{% else %}
+
+You are not logged in, therefore can't make changes
+
+{% endif %}
+

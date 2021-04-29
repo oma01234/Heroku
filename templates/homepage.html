@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+	<link rel="stylesheet" href="{% staticfiles 'admin/css/login.css' %}">
+	<title>DJANGO BLOG</title>
+</head>
+<body>
+<h1>DJANGO BLOG</h1>
+<header>
+	<div class="nav-left">
+		<a href= "{% url 'register' %}">Register</a>
+	</div>
+</header>
+<header>
+	<div class="nav-right">
+		<a href= "{% url 'login' %}">Login</a>
+	</div>
+</header>
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+	    <ul class="nav navbar-nav navbar-right">
+		    <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+	    </ul>
+    </div>
+  </div>
+</nav>
+
+</html>

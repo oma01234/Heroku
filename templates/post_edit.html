@@ -1,0 +1,17 @@
+{% extends 'home2.html' %}
+{% if user.is_authenticated %}
+	{% block content %}
+		<h1>Edit Post</h1>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<form action="" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<a href="{% url 'home2' %}"><input type="submit" value="Save"></a>
+		</form>
+	{% endblock %}
+{% else %}
+
+You are not logged in, therefore can't make changes
+
+{% endif %}
+

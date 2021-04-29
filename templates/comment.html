@@ -1,0 +1,10 @@
+{% block content %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<div class="post-entry">
+		<p> {{ post.comment }} </p>
+	</div>
+	<div>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<a href="{% url 'new_comment' post.pk %}">+ write new comment</a>
+	</div>
+{% endblock %}

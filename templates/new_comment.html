@@ -1,0 +1,19 @@
+{% extends 'home2.html' %}
+{% if user.is_authenticated %}
+	{% block content %}
+		<div class="form-group">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+			<h1>New comment</h1>
+			<form action="" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button class="btn btn-secondary"></button>
+				<input type="submit" value="comment">
+			</form>
+		</div>
+	{% endblock %}
+{% else %}
+
+You are not logged in, therefore can't comment
+
+{% endif %}
