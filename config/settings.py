@@ -1,3 +1,4 @@
+
 """
 Django settings for config project.
 
@@ -12,8 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-load_dotenv()
 import django_heroku
 
 # from os import environ, path
@@ -34,13 +33,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "django-insecure-qgd-*6ds68&-mw!+z1ap2unnicvt42g#(t%62j@c%pd4&ws%s!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG")
+DEBUG = False
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
