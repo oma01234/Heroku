@@ -1,3 +1,4 @@
+import django_heroku
 
 """
 Django settings for config project.
@@ -13,7 +14,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+
 
 # from os import environ, path
 # from sys import path as sys_path
