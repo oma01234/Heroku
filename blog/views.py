@@ -33,7 +33,6 @@ class BlogDetailView(DetailView):
     template_name = 'post_detail.html'
 
 
-
 class LogoutOut(ListView):
     model = Logout
     template_name = 'logout.html'
